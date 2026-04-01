@@ -1,14 +1,19 @@
-# Sentinel-Archiver (V8.5 - V17)
-### Advanced Cold-Storage Compression for macOS (M3 8GB RAM Optimized)
+# Sentinel-Archiver (V1 - V16)
+### High-Density Cold Storage for M3 Apple Silicon (8GB RAM Optimized)
 
-This repository tracks the evolution of a custom deduplicating compression engine built to outperform Apple Native ZIP by 20-50% on massive 3D and Photography datasets.
+This project tracks the evolution of a custom compression engine designed to outperform native system tools by **20% to 50%** on massive 3D, animation, and photography datasets.
 
-## 📈 The Evolution Path
-- **V12 [Stable Hybrid]:** The most reliable production version for general tasks. Uses Zlib pre-compression.
-- **V16 [Solid Sentinel]:** High-density experiment using LZMA2 Solid blocks. (Known to hit memory limits on 8GB RAM at 300k+ files).
-- **V17 [Ghost Engine]:** The Final Form. Implements **Zero-RAM Architecture**. Processes 1TB+ datasets by streaming metadata directly to SQLite, bypassing Python's memory bottlenecks.
+## 📊 Evolution Timeline
 
-## 🚀 Key Features
-- **Format Triage:** Automated lossless conversion of PNG/JPG to JPEG-XL before archival.
-- **Global Deduplication:** 128KB block-level hashing to eliminate redundant data across file boundaries.
-- **8GB RAM Shield:** Architected specifically to handle large swap files and BufferedWriter protection on M3 Silicon.
+| Phase | Versions | Focus |
+| :--- | :--- | :--- |
+| **Foundation** | V1 - V7 | Basic Python zipping and format testing. |
+| **The Breakthrough** | V8.5 - V11 | Introduction of 64KB block deduplication and JXL Triage. |
+| **Stability Era** | V12 | The "Daily Driver." Stable, fast, and balanced. |
+| **Heavyweight** | V13 - V15 | Adaptive Intelligence and Packfile architecture for 100GB+ scale. |
+| **Final Sentinel** | V16 | Zero-RAM architecture designed to bypass 8GB RAM limitations. |
+
+## 🚀 Key Innovations
+- **Format Triage:** Pre-processing images via JPEG-XL Effort 7+ for maximum density.
+- **Global Deduplication:** SHA-256 block hashing across folder boundaries.
+- **Atomic RAM Purge:** Explicit memory management to prevent "Killed: 9" errors on limited hardware.
